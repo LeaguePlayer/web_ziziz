@@ -71,45 +71,37 @@
     $session->close();
 ?>
 
+	<?
+		$menuItems = array(
+			array('label'=>'Главная', 'url'=>'/'),
+			array('label'=>'Запчасти', 'url'=>array('/announcements/index', 'gorod'=>$city_translit)),
+			array('label'=>'Автомобили', 'url'=>array('/auto/index', 'gorod'=>$city_translit)),
+		);
+		if ( !Yii::app()->user->isGuest ) {
+			$menuItems[] = array('label'=>'Личный кабинет', 'url'=>array('users/view', 'id'=>Yii::app()->user->id));
+		}
+	?>
+
 	<div class="header_menu">
-        <?php
-        if (Yii::app()->user->isGuest){
-            $this->widget('zii.widgets.CMenu',array(
-    			'items'=>array(
-                    array('label'=>'Главная', 'url'=>'/'),
-    				array('label'=>'Объявления', 'url'=>array('/announcements/index', 'gorod'=>$city_translit)),
-                    array('label'=>'Авто Объявления', 'url'=>array('/auto/index', 'gorod'=>$city_translit)),
-    			),
-    		));
-        }
-        else {
-            $this->widget('zii.widgets.CMenu',array(
-    			'items'=>array(
-                    array('label'=>'Главная', 'url'=>'/'),
-    				array('label'=>'Объявления', 'url'=>array('/announcements/index', 'gorod'=>$city_translit)),
-                    array('label'=>'Авто Объявления', 'url'=>array('/auto/index', 'gorod'=>$city_translit)),
-                    array('label'=>'Личный кабинет', 'url'=>array('users/view', 'id'=>Yii::app()->user->id)),
-    			),
-    		));
-        }
-        
-        ?>
-    </div>
+		<? $this->widget('zii.widgets.CMenu',array(
+			'items'=>$menuItems,
+		)); ?>
+	</div>
     
     <? if (Yii::app()->user->checkAccess('moderator')): ?>
-    <div class="header_menu">
-        <?
-        $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-                array('label'=>'Категории', 'url'=>array('/category/index')),
-                array('label'=>'Классификаторы', 'url'=>array('/classifier/index')),
-                array('label'=>'Модификации', 'url'=>array('/modification/index')),
-                array('label'=>'Модерация', 'url'=>array('site/moderation')),
-                array('label'=>'Слайдер', 'url'=>array('sliderPhoto/manage')),
-			),
-		));
-        ?>
-    </div>
+		<div class="header_menu">
+			<?
+			$this->widget('zii.widgets.CMenu',array(
+				'items'=>array(
+					array('label'=>'Категории', 'url'=>array('/category/index')),
+					array('label'=>'Классификаторы', 'url'=>array('/classifier/index')),
+					array('label'=>'Модификации', 'url'=>array('/modification/index')),
+					array('label'=>'Модерация', 'url'=>array('site/moderation')),
+					array('label'=>'Слайдер', 'url'=>array('sliderPhoto/manage')),
+				),
+			));
+			?>
+		</div>
     <? endif; ?>
     
     <div id="header_logo">
