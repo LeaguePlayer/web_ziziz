@@ -1,0 +1,47 @@
+ul.ns_hierarchy li /* Чтобы не было сдвига элементов списка из-за кнопки раскрытия/закрытия */
+{
+	clear: both;
+}
+
+ul.ns_hierarchy, ul.ns_hierarchy ul /* Убираем маркер */
+{
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0px;
+}
+
+/* наводим красоту */
+ul.ns_hierarchy
+{
+	padding-left: 18px;
+}
+ul.ns_hierarchy ul
+{
+	padding-left: 22px;
+}
+
+li.nsh_closed span, li.nsh_opened span /* тэг span, на который будем жать */
+{
+	float: left;
+	position: relative;
+	width: 9px;
+	height: 9px;
+	margin: 6px 6px 0 -18px;
+	cursor: pointer;
+	overflow: hidden;
+	font: normal 0.8em/0.8em sans-serif;
+}
+
+li.nsh_closed span em, li.nsh_opened span em /* тэг em в тэгу span, который будет содержать картинку */
+{
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	top: 0;
+	left: 0;
+	background: url(plus-min.gif) no-repeat;
+}
+li.nsh_closed span em
+{
+	background-position: bottom;
+}

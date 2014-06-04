@@ -1,0 +1,6 @@
+/index.php
+/framework
+/protected/config/main.php
+*.tar
+*.bz2
+*.zip

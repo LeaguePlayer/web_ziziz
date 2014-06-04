@@ -1,0 +1,27 @@
+#moderation_view tr.moder {
+    background: #000;
+}
+
+.grid-view table.items th,
+.grid-view table.items td {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 14px;
+}
+
+.ui-widget-content a {
+    color: #358BBE !important;
+}
+
+.ui-widget-content a:hover {
+    color: #d7c04b !important;
+}
+.loader {
+    background-image: url("../../images/loader2.gif");
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    left: 40px;
+    top: 32px;
+    display: none;
+    

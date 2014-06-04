@@ -1,0 +1,95 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+/*
+  * 5.Карта
+  */
+#objects_in_map {
+	height: auto;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.text_title_objects_in_map {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	color: #000;
+	height: 20px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+/*
+ * 5.1.Меню карты
+ */
+#map_menu {
+	width: 100%;
+	position: absolute;
+	margin-bottom: 0;
+	background-color: #2987c5;
+	z-index: 5;
+}
+
+#map_menu ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+#map_menu ul li {
+	display: block;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #2372a6;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #66bae0;
+	margin: 0px;
+	float: left;
+}
+#map_menu ul li:first-child {
+	border-left-style: none;
+	border-radius: 8px 0px 0px 8px
+}
+#map_menu ul li:last-child {
+	border-right-style: none;
+}
+#map_menu ul li:hover {
+	background-color: #2372a6;
+}
+#map_menu ul li a {
+	display: block;
+	height: 28px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #ffd304;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 22px;
+	padding: 6px 15px 2px;
+}
+#map_menu ul li a img {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+#map_menu ul li a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+/* 5.1============================
+ * 5.2.Карта
+ */
+#map {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
